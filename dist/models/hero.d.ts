@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import type mongoose from 'mongoose';
 declare const _default: mongoose.Model<{
     hero_name: string;
     civil_name: string;

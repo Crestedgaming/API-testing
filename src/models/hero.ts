@@ -6,7 +6,8 @@ const heroSchema = new Schema({
   civil_name: { type: String, required: true },
   story: { type: String, required: true },
   created_at: { type: Date, default: Date.now },
-  
+}, {
+  collection: 'heroes',
 });
 
-export default mongoose.model('Hero', heroSchema);
+export default mongoose.model('Hero', heroSchema, 'heroes');
