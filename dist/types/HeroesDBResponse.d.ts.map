@@ -1,0 +1,1 @@
+{"version":3,"file":"HeroesDBResponse.d.ts","sourceRoot":"","sources":["../../src/types/HeroesDBResponse.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,QAAQ,CAAC;AAE5C,MAAM,WAAW,gBAAiB,SAAQ,aAAa;IACnD,EAAE,EAAE,MAAM,CAAC;IACX,SAAS,EAAE,MAAM,CAAC;IAClB,UAAU,EAAE,MAAM,CAAC;IACnB,KAAK,EAAE,MAAM,CAAC;IACd,UAAU,EAAE,IAAI,CAAC;IACjB,UAAU,EAAE,IAAI,CAAC;CACpB"}

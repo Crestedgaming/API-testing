@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const router = express_1.default.Router();
 const heroController_1 = require("../controllers/heroController");
+const router = express_1.default.Router();
 router.get('/', heroController_1.fetchAllHeroes);
 router.get('/:id', heroController_1.fetchHero);
 router.post('/', heroController_1.createHero);

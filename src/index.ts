@@ -1,20 +1,20 @@
 import 'dotenv/config';
-import express from 'express';
 import cors from 'cors';
+import express from 'express';
 import heroesRouter from './routes/heroes';
-import {connectToDatabase} from './config/db'
-connectToDatabase();
+import mongoose from 'mongoose';
+mongoose.connect(process.env.MONGODB_URL || "");
 
 const app = express();
+
+app.use(express.json());
+app.use(cors());
 
 app.use('/heroes', heroesRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
-
-app.use(express.json());
-app.use(cors());
 
 const PORT = 3000;
 app.listen(PORT, () => {

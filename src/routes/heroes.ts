@@ -1,14 +1,13 @@
 import express from "express";
-const router = express.Router();
 import {
     fetchAllHeroes,
     fetchHero,
     createHero,
     updateHero,
-    deleteHero
-
+    deleteHero,
 } from "../controllers/heroController";
 
+const router = express.Router();
 
 router.get('/', fetchAllHeroes);
 router.get('/:id', fetchHero);
