@@ -2,9 +2,25 @@
 import { Request, Response } from "express";
 import Hero from "../models/hero";
 
+
 export const fetchAllHeroes = async (_req: Request, res: Response) => {
+    const search = _req.query.search
+    const sort = _req.query.sort
+
     try {
-        const heroes = await Hero.find().sort({ created_at: -1 });
+        console.log(sort);
+
+        let filter: {} = {}
+        if  (search) {
+            filter = {hero_name: { $regex: search, $options: 'i' } }
+        }
+
+        let sortOrder: {} = {}
+        if (sort && (sort === 'asc' || sort === 'desc')) {
+            sortOrder = { hero_name: sort } 
+        }
+        
+        const heroes = await Hero.find(filter).sort(sortOrder);
         res.json(heroes);
     } catch (error: unknown) {
         const message = error instanceof Error ? error.message : 'Unknown error';
